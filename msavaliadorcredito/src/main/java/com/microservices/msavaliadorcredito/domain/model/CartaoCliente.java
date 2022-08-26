@@ -1,4 +1,4 @@
-package com.microservices.msavaliadorcredito.domain.entity;
+package com.microservices.msavaliadorcredito.domain.model;
 
 import lombok.Data;
 

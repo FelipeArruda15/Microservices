@@ -1,6 +1,6 @@
 package com.microservices.msavaliadorcredito.rest.api;
 
-import com.microservices.msavaliadorcredito.domain.entity.SituacaoCliente;
+import com.microservices.msavaliadorcredito.domain.model.SituacaoCliente;
 import com.microservices.msavaliadorcredito.service.AvaliadorCreditoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,8 @@ public class AvaliadorCreditoController {
     }
 
     @GetMapping(value = "situacao-cliente", params = "cpf")
-    public ResponseEntity<SituacaoCliente> obterSituacaoCliente(@RequestParam("cpf") String cpf){
-        service.obterSituacaoCliente(cpf)
+    public ResponseEntity<SituacaoCliente> consultaSituacaoCliente(@RequestParam("cpf") String cpf){
+        SituacaoCliente situacaoCliente = service.obterSituacaoCliente(cpf);
+        return ResponseEntity.ok(situacaoCliente);
     }
 }

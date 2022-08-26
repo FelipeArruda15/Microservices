@@ -1,6 +1,6 @@
 package com.microservices.msavaliadorcredito.service;
 
-import com.microservices.msavaliadorcredito.domain.entity.SituacaoCliente;
+import com.microservices.msavaliadorcredito.domain.model.SituacaoCliente;
 
 public interface AvaliadorCreditoService {
 
