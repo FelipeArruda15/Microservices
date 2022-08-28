@@ -1,5 +1,6 @@
 package com.microservices.msavaliadorcredito.proxy;
 
+import com.microservices.msavaliadorcredito.domain.model.Cartao;
 import com.microservices.msavaliadorcredito.domain.model.CartaoCliente;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -13,5 +14,8 @@ public interface CartoesProxy {
 
     @GetMapping(params = "cpf")
     ResponseEntity<List<CartaoCliente>> getCartoesPorCliente(@RequestParam("cpf") String cpf);
+
+    @GetMapping(params = "renda")
+    ResponseEntity<List<Cartao>> getCartoesRendaAte(@RequestParam("renda") Long renda);
 
 }
